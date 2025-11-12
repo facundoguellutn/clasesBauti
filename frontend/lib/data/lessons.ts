@@ -1,6 +1,7 @@
 import { Lesson } from '@/lib/types';
 import { quadraticLessons } from './quadratic/lessons';
 import { vscodeLessons } from './visualStudio/lessons';
+import { webDesignLessons } from './webDesign/lessons';
 
 
 
@@ -18,4 +19,12 @@ export const getVSCodeLessonById = (id: string) => {
 
 export const getVSCodeLessonBySlug = (slug: string) => {
   return vscodeLessons.find(lesson => lesson.slug === slug);
+};
+
+export const getWebDesignLessonById = (id: string) => {
+  return webDesignLessons.find(lesson => lesson.id === id);
+};
+
+export const getWebDesignLessonBySlug = (slug: string) => {
+  return webDesignLessons.find(lesson => lesson.slug === slug);
 };

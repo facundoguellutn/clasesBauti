@@ -21,4 +21,14 @@ export const topics: Topic[] = [
     lessonsCount: 14,
     exercisesCount: 6,
   },
+  {
+    id: 'web-design',
+    slug: 'web-design',
+    title: 'Desarrollo Web',
+    description: 'Aprende los fundamentos del desarrollo web: HTML, CSS y JavaScript. Enfocado en JavaScript como lenguaje introductorio para principiantes. Incluye instalación de Node.js y playgrounds online.',
+    icon: '🌐',
+    color: 'bg-purple-500',
+    lessonsCount: 16,
+    exercisesCount: 10,
+  },
 ];
