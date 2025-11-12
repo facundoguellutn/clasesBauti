@@ -10,7 +10,7 @@ export default function Home() {
   const featuredTopic = topics[0]; // Funciones Cuadráticas
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900">
+    <div className="min-h-screen bg-linear-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900">
       {/* Hero Section */}
       <section className="w-full px-4 py-24 md:py-32 lg:py-40">
         <div className="max-w-4xl mx-auto space-y-8 text-center">

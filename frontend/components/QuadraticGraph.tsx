@@ -1,20 +1,8 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useRef } from 'react';
+import functionPlot from 'function-plot';
 import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  ReferenceLine,
-  Dot,
-} from 'recharts';
-import {
-  generateQuadraticPoints,
   getVertex,
   getRoots,
   getRecommendedXRange,
@@ -46,107 +34,135 @@ export function QuadraticGraph({
   xMin,
   xMax,
 }: QuadraticGraphProps) {
-  const [minX, maxX] = xMin === undefined || xMax === undefined
-    ? getRecommendedXRange(a, b, c)
-    : [xMin, xMax];
-
-  const data = useMemo(
-    () => generateQuadraticPoints(a, b, c, minX, maxX, 0.2),
-    [a, b, c, minX, maxX]
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const [minX, maxX] = useMemo(() => 
+    xMin === undefined || xMax === undefined
+      ? getRecommendedXRange(a, b, c)
+      : [xMin, xMax],
+    [a, b, c, xMin, xMax]
   );
 
   const vertex = useMemo(() => getVertex(a, b, c), [a, b, c]);
   const roots = useMemo(() => getRoots(a, b, c), [a, b, c]);
+  const [minY, maxY] = useMemo(() => getRecommendedYRange(a, b, c), [a, b, c]);
+
+  // Construir la expresión de la función cuadrática
+  const functionExpression = useMemo(() => {
+    const parts: string[] = [];
+    if (a !== 0) {
+      if (a === 1) parts.push('x^2');
+      else if (a === -1) parts.push('-x^2');
+      else parts.push(`${a}*x^2`);
+    }
+    if (b !== 0) {
+      if (b > 0 && parts.length > 0) parts.push('+');
+      if (b === 1) parts.push('x');
+      else if (b === -1) parts.push('-x');
+      else parts.push(`${b}*x`);
+    }
+    if (c !== 0) {
+      if (c > 0 && parts.length > 0) parts.push('+');
+      parts.push(String(c));
+    }
+    return parts.length > 0 ? parts.join('') : '0';
+  }, [a, b, c]);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    // Limpiar el contenedor antes de renderizar
+    containerRef.current.innerHTML = '';
+
+    const data: any[] = [
+      {
+        fn: functionExpression,
+        graphType: 'polyline',
+        color: 'rgb(59, 130, 246)',
+        attr: {
+          'stroke-width': 2,
+        },
+      },
+    ];
+
+    // Agregar línea del eje de simetría si está habilitado
+    if (showAxisOfSymmetry) {
+      data.push({
+        fn: `x = ${vertex.x}`,
+        graphType: 'polyline',
+        color: 'rgba(168, 85, 247, 0.5)',
+        attr: {
+          'stroke-dasharray': '5,5',
+          'stroke-width': 1.5,
+        },
+      });
+    }
+
+    // Agregar punto del vértice si está habilitado
+    if (showVertex) {
+      data.push({
+        points: [[vertex.x, vertex.y]],
+        fnType: 'points',
+        graphType: 'scatter',
+        color: 'rgb(239, 68, 68)',
+        attr: {
+          r: 6,
+        },
+      });
+    }
+
+    // Agregar puntos de las raíces si están habilitados
+    if (showRoots && roots.length > 0) {
+      const rootPoints = roots.map(root => [root, 0]);
+      data.push({
+        points: rootPoints,
+        fnType: 'points',
+        graphType: 'scatter',
+        color: 'rgb(34, 197, 94)',
+        attr: {
+          r: 5,
+        },
+      });
+    }
+
+    try {
+      functionPlot({
+        target: containerRef.current,
+        width: containerRef.current.offsetWidth || 800,
+        height: height,
+        xAxis: {
+          label: 'x',
+          domain: [minX, maxX],
+        },
+        yAxis: {
+          label: 'y',
+          domain: [minY, maxY],
+        },
+        grid: true,
+        data: data,
+        tip: {
+          xLine: true,
+          yLine: true,
+          renderer: (x: number, y: number) => {
+            return `(${x.toFixed(2)}, ${y.toFixed(2)})`;
+          },
+        },
+      });
+    } catch (error) {
+      console.error('Error al renderizar el gráfico:', error);
+    }
+  }, [a, b, c, functionExpression, minX, maxX, minY, maxY, vertex, roots, showVertex, showRoots, showAxisOfSymmetry, height]);
 
   return (
     <div className="w-full space-y-4">
       {title && <h3 className="text-lg font-semibold">{title}</h3>}
 
       <div className="w-full bg-white dark:bg-slate-800 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
-        <ResponsiveContainer width="100%" height={height}>
-          <LineChart
-            data={data}
-            margin={{ top: 5, right: 30, left: 0, bottom: 5 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(148, 163, 184, 0.2)" />
-            <XAxis
-              dataKey="x"
-              type="number"
-              label={{ value: 'x', position: 'insideBottomRight', offset: -5 }}
-              stroke="rgba(148, 163, 184, 0.5)"
-            />
-            <YAxis
-              label={{ value: 'y', angle: -90, position: 'insideLeft' }}
-              stroke="rgba(148, 163, 184, 0.5)"
-            />
-            <Tooltip
-              contentStyle={{
-                backgroundColor: 'rgba(15, 23, 42, 0.95)',
-                border: '1px solid rgba(148, 163, 184, 0.3)',
-                borderRadius: '8px',
-                color: '#e2e8f0',
-              }}
-              formatter={(value) => (
-                typeof value === 'number' ? value.toFixed(2) : value
-              )}
-            />
-
-            {/* Reference line for axis of symmetry */}
-            {showAxisOfSymmetry && (
-              <ReferenceLine
-                x={vertex.x}
-                stroke="rgba(168, 85, 247, 0.3)"
-                strokeDasharray="5 5"
-                label={{
-                  value: `x = ${vertex.x.toFixed(2)}`,
-                  position: 'top',
-                  fill: 'rgba(168, 85, 247, 0.7)',
-                  fontSize: 12,
-                }}
-              />
-            )}
-
-            {/* Reference line for Y axis */}
-            <ReferenceLine
-              y={0}
-              stroke="rgba(148, 163, 184, 0.3)"
-            />
-
-            {/* Main parabola */}
-            <Line
-              type="monotone"
-              dataKey="y"
-              stroke="rgb(59, 130, 246)"
-              dot={false}
-              isAnimationActive={false}
-              strokeWidth={2}
-              name={`f(x) = ${a}x² + ${b}x + ${c}`}
-            />
-
-            {/* Vertex point */}
-            {showVertex && (
-              <Dot
-                x={vertex.x}
-                y={vertex.y}
-                fill="rgb(239, 68, 68)"
-                r={6}
-              />
-            )}
-
-            {/* Root points */}
-            {showRoots && roots.length > 0 && (
-              roots.map((root, index) => (
-                <Dot
-                  key={`root-${index}`}
-                  x={root}
-                  y={0}
-                  fill="rgb(34, 197, 94)"
-                  r={5}
-                />
-              ))
-            )}
-          </LineChart>
-        </ResponsiveContainer>
+        <div 
+          ref={containerRef} 
+          style={{ width: '100%', height: `${height}px` }}
+          className="function-plot-container"
+        />
       </div>
 
       {/* Info Panel */}
