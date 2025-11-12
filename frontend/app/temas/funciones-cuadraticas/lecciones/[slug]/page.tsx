@@ -7,7 +7,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { QuadraticGraph } from '@/components/QuadraticGraph';
+import { CoefficientExplorer } from '@/components/CoefficientExplorer';
+import { VertexCalculator } from '@/components/VertexCalculator';
+import { DiscriminantCalculator } from '@/components/DiscriminantCalculator';
+import { CompletingSquareVisualizer } from '@/components/CompletingSquareVisualizer';
+import { GraphComparator } from '@/components/GraphComparator';
+import { StepByStepSolver } from '@/components/StepByStepSolver';
+import { ExerciseSolver } from '@/components/ExerciseSolver';
 import { quadraticLessons, getQuadraticLessonBySlug } from '@/lib/data/lessons';
+import { Exercise } from '@/lib/types';
 
 export default function LessonPage() {
   const params = useParams();
@@ -118,6 +126,78 @@ export default function LessonPage() {
                       showAxisOfSymmetry={section.data.showAxisOfSymmetry !== false}
                     />
                   )}
+                </div>
+              )}
+
+              {section.type === 'interactive' && section.data && (
+                <div className="space-y-4">
+                  {section.data.type === 'coefficient-explorer' && (
+                    <CoefficientExplorer
+                      initialA={section.data.initialA}
+                      initialB={section.data.initialB}
+                      initialC={section.data.initialC}
+                      showDescription={section.data.showDescription !== false}
+                    />
+                  )}
+                  {section.data.type === 'vertex-calculator' && (
+                    <VertexCalculator showDescription={section.data.showDescription !== false} />
+                  )}
+                  {section.data.type === 'discriminant-calculator' && (
+                    <DiscriminantCalculator
+                      showDescription={section.data.showDescription !== false}
+                    />
+                  )}
+                  {section.data.type === 'completing-square' && (
+                    <CompletingSquareVisualizer
+                      showDescription={section.data.showDescription !== false}
+                    />
+                  )}
+                  {section.data.type === 'step-by-step-solver' && (
+                    <StepByStepSolver showDescription={section.data.showDescription !== false} />
+                  )}
+                </div>
+              )}
+
+              {section.type === 'comparison' && section.data && (
+                <div className="space-y-4">
+                  {section.data.type === 'graph-comparator' && section.data.functions && (
+                    <GraphComparator
+                      functions={section.data.functions}
+                      showDescription={section.data.showDescription !== false}
+                    />
+                  )}
+                </div>
+              )}
+
+              {section.type === 'tip' && (
+                <Card className="bg-yellow-50 dark:bg-yellow-950 border-yellow-200 dark:border-yellow-900">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-yellow-900 dark:text-yellow-100 flex items-center gap-2">
+                      💡 Tip
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-yellow-900 dark:text-yellow-100 whitespace-pre-wrap">
+                    {section.content}
+                  </CardContent>
+                </Card>
+              )}
+
+              {section.type === 'warning' && (
+                <Card className="bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-900">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-red-900 dark:text-red-100 flex items-center gap-2">
+                      ⚠️ Advertencia
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-red-900 dark:text-red-100 whitespace-pre-wrap">
+                    {section.content}
+                  </CardContent>
+                </Card>
+              )}
+
+              {section.type === 'exercise' && section.data && (
+                <div className="space-y-4">
+                  <ExerciseSolver exercise={section.data as Exercise} />
                 </div>
               )}
             </div>

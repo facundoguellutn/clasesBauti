@@ -28,8 +28,8 @@ export interface LessonSection {
   id: string;
   title: string;
   content: string;
-  type: 'text' | 'example' | 'definition' | 'formula' | 'visualization';
-  data?: any; // For graphs, examples, etc.
+  type: 'text' | 'example' | 'definition' | 'formula' | 'visualization' | 'interactive' | 'comparison' | 'tip' | 'warning' | 'exercise';
+  data?: any; // For graphs, examples, interactive components, etc.
 }
 
 // Exercise types
