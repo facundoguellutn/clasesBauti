@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { vscodeLessons, getVSCodeLessonBySlug } from '@/lib/data/lessons';
+import {  getVSCodeLessonBySlug } from '@/lib/data/lessons';
+import { vscodeLessons } from '@/lib/data/visualStudio/lessons';
 
 export default function VSCodeLessonPage() {
   const params = useParams();

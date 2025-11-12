@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { topics } from "@/lib/data/topics";
-import { quadraticLessons } from "@/lib/data/lessons";
-import { quadraticExercises } from "@/lib/data/exercises";
+import { quadraticExercises } from "@/lib/data/quadratic/exercises";
 
 export default function Home() {
   const featuredTopic = topics[0]; // Funciones Cuadráticas

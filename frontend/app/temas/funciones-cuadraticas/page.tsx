@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { quadraticLessons } from '@/lib/data/lessons';
-import { quadraticExercises } from '@/lib/data/exercises';
+  import { quadraticLessons } from '@/lib/data/quadratic/lessons';
+import { quadraticExercises } from '@/lib/data/quadratic/exercises';
 
 export default function QuadraticFunctionsPage() {
   const basicExercises = quadraticExercises.filter((ex) => ex.difficulty === 'basic');

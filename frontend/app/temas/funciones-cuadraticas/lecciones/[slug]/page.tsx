@@ -14,7 +14,8 @@ import { CompletingSquareVisualizer } from '@/components/CompletingSquareVisuali
 import { GraphComparator } from '@/components/GraphComparator';
 import { StepByStepSolver } from '@/components/StepByStepSolver';
 import { ExerciseSolver } from '@/components/ExerciseSolver';
-import { quadraticLessons, getQuadraticLessonBySlug } from '@/lib/data/lessons';
+import {  getQuadraticLessonBySlug } from '@/lib/data/lessons';
+import { quadraticLessons } from '@/lib/data/quadratic/lessons';
 import { Exercise } from '@/lib/types';
 
 export default function LessonPage() {

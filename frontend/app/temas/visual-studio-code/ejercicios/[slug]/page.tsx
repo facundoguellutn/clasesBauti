@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ExerciseSolver } from '@/components/ExerciseSolver';
 import { getExerciseBySlug } from '@/lib/data/exercises';
-import { vscodeExercises } from '@/lib/data/exercises';
+import { vscodeExercises } from '@/lib/data/visualStudio/exercises';
 
 export default function VSCodeExercisePage() {
   const params = useParams();

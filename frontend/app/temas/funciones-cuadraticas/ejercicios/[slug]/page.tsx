@@ -4,7 +4,8 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ExerciseSolver } from '@/components/ExerciseSolver';
-import { quadraticExercises, getExerciseBySlug } from '@/lib/data/exercises';
+import { getExerciseBySlug } from '@/lib/data/exercises';
+import { quadraticExercises } from '@/lib/data/quadratic/exercises';
 
 export default function ExercisePage() {
   const params = useParams();
