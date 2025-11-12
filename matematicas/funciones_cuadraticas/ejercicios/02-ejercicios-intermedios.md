@@ -2,7 +2,7 @@
 
 Estos ejercicios requieren combinar varios conceptos. Deberás elegir el método más adecuado para resolver cada problema.
 
-**ID de Ejercicio:** EI01 - EI20
+**ID de Ejercicio:** EI01 - EI26
 
 ---
 
@@ -54,6 +54,27 @@ Para cada función, encuentra la concavidad, el vértice, los cortes con los eje
 18. **EI18:** Para la función $f(x) = x^2 + kx + 9$, ¿qué valor de `k` hará que la función tenga exactamente una raíz real doble? (Pista: ¿qué debe valer el discriminante?).
 19. **EI19:** El eje de simetría de la parábola $f(x) = -2x^2 + 12x - 5$ es $x=3$. Sin calcular el vértice completo, ¿la parábola tiene un máximo o un mínimo y por qué?
 20. **EI20:** Reescribe la función $f(x) = 2(x-1)(x+3)$ en forma canónica. (Pista: puedes pasar primero por la forma general, o encontrar el vértice a partir de las raíces).
+
+---
+
+### Bloque 6: Representación Gráfica y Análisis Completo
+
+Para cada una de las siguientes funciones, realiza lo siguiente:
+- Representa gráficamente la función
+- Expresa de qué modo se presenta el gráfico (forma canónica, factorizada o polinómica)
+- Completa la tabla con: $x_1$, $x_2$ (raíces), intervalo de crecimiento, intervalo de decrecimiento, máximo, mínimo, intervalo de positividad e intervalo de negatividad
+
+21. **EI21:** $f(x) = 2(x + 1)(x + \frac{7}{2})$
+
+22. **EI22:** $g(x) = -\frac{1}{4}x^2 - x + 3$
+
+23. **EI23:** $h(x) = \frac{1}{2}(x - 3)^2 - 2$
+
+24. **EI24:** $f(x) = -2(x + 1)(x + 3)$
+
+25. **EI25:** $g(x) = -x^2 - 2x + 3$
+
+26. **EI26:** $h(x) = -\frac{1}{2}(x + 3)^2 + 2$
 
 ---
 **Siguientes ejercicios:** [Ejercicios Avanzados](03-ejercicios-avanzados.md)

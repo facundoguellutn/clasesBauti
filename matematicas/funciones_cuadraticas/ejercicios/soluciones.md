@@ -177,6 +177,93 @@ Aquí encontrarás las soluciones detalladas para todos los ejercicios propuesto
 *   $k = f(-1) = 2(-1-1)(-1+3) = 2(-2)(2) = -8$.
 *   Forma canónica: **$f(x) = 2(x+1)^2 - 8$**.
 
+**EI21:** $f(x) = 2(x + 1)(x + \frac{7}{2})$
+*   **Forma:** Factorizada
+*   **Raíces:** $x_1 = -1$, $x_2 = -\frac{7}{2} = -3.5$
+*   **Vértice:** $h = \frac{-1 + (-\frac{7}{2})}{2} = \frac{-\frac{9}{2}}{2} = -\frac{9}{4} = -2.25$
+*   $k = f(-\frac{9}{4}) = 2(-\frac{9}{4} + 1)(-\frac{9}{4} + \frac{7}{2}) = 2(-\frac{5}{4})(\frac{5}{4}) = -\frac{25}{8} = -3.125$
+*   **Concavidad:** $a = 2 > 0$, abre hacia arriba
+*   **Intervalo de crecimiento:** $(-\frac{9}{4}, +\infty)$
+*   **Intervalo de decrecimiento:** $(-\infty, -\frac{9}{4})$
+*   **Máximo:** No tiene
+*   **Mínimo:** $(-\frac{9}{4}, -\frac{25}{8})$
+*   **Intervalo de positividad:** $(-\infty, -\frac{7}{2}) \cup (-1, +\infty)$
+*   **Intervalo de negatividad:** $(-\frac{7}{2}, -1)$
+
+**EI22:** $g(x) = -\frac{1}{4}x^2 - x + 3$
+*   **Forma:** Polinómica
+*   **Vértice:** $h = \frac{-(-1)}{2(-\frac{1}{4})} = \frac{1}{-\frac{1}{2}} = -2$
+*   $k = g(-2) = -\frac{1}{4}(4) - (-2) + 3 = -1 + 2 + 3 = 4$
+*   **Raíces:** Resolviendo $-\frac{1}{4}x^2 - x + 3 = 0$:
+    *   Multiplicando por -4: $x^2 + 4x - 12 = 0$
+    *   $\Delta = 16 + 48 = 64$
+    *   $x = \frac{-4 \pm 8}{2}$, entonces $x_1 = -6$, $x_2 = 2$
+*   **Concavidad:** $a = -\frac{1}{4} < 0$, abre hacia abajo
+*   **Intervalo de crecimiento:** $(-\infty, -2)$
+*   **Intervalo de decrecimiento:** $(-2, +\infty)$
+*   **Máximo:** $(-2, 4)$
+*   **Mínimo:** No tiene
+*   **Intervalo de positividad:** $(-6, 2)$
+*   **Intervalo de negatividad:** $(-\infty, -6) \cup (2, +\infty)$
+
+**EI23:** $h(x) = \frac{1}{2}(x - 3)^2 - 2$
+*   **Forma:** Canónica
+*   **Vértice:** $(3, -2)$ (se lee directamente)
+*   **Raíces:** Resolviendo $\frac{1}{2}(x - 3)^2 - 2 = 0$:
+    *   $\frac{1}{2}(x - 3)^2 = 2$
+    *   $(x - 3)^2 = 4$
+    *   $x - 3 = \pm 2$, entonces $x_1 = 1$, $x_2 = 5$
+*   **Concavidad:** $a = \frac{1}{2} > 0$, abre hacia arriba
+*   **Intervalo de crecimiento:** $(3, +\infty)$
+*   **Intervalo de decrecimiento:** $(-\infty, 3)$
+*   **Máximo:** No tiene
+*   **Mínimo:** $(3, -2)$
+*   **Intervalo de positividad:** $(-\infty, 1) \cup (5, +\infty)$
+*   **Intervalo de negatividad:** $(1, 5)$
+
+**EI24:** $f(x) = -2(x + 1)(x + 3)$
+*   **Forma:** Factorizada
+*   **Raíces:** $x_1 = -1$, $x_2 = -3$
+*   **Vértice:** $h = \frac{-1 + (-3)}{2} = -2$
+*   $k = f(-2) = -2(-2 + 1)(-2 + 3) = -2(-1)(1) = 2$
+*   **Concavidad:** $a = -2 < 0$, abre hacia abajo
+*   **Intervalo de crecimiento:** $(-\infty, -2)$
+*   **Intervalo de decrecimiento:** $(-2, +\infty)$
+*   **Máximo:** $(-2, 2)$
+*   **Mínimo:** No tiene
+*   **Intervalo de positividad:** $(-3, -1)$
+*   **Intervalo de negatividad:** $(-\infty, -3) \cup (-1, +\infty)$
+
+**EI25:** $g(x) = -x^2 - 2x + 3$
+*   **Forma:** Polinómica
+*   **Vértice:** $h = \frac{-(-2)}{2(-1)} = \frac{2}{-2} = -1$
+*   $k = g(-1) = -1 - 2(-1) + 3 = -1 + 2 + 3 = 4$
+*   **Raíces:** Resolviendo $-x^2 - 2x + 3 = 0$:
+    *   Multiplicando por -1: $x^2 + 2x - 3 = 0$
+    *   Factorizando: $(x + 3)(x - 1) = 0$, entonces $x_1 = -3$, $x_2 = 1$
+*   **Concavidad:** $a = -1 < 0$, abre hacia abajo
+*   **Intervalo de crecimiento:** $(-\infty, -1)$
+*   **Intervalo de decrecimiento:** $(-1, +\infty)$
+*   **Máximo:** $(-1, 4)$
+*   **Mínimo:** No tiene
+*   **Intervalo de positividad:** $(-3, 1)$
+*   **Intervalo de negatividad:** $(-\infty, -3) \cup (1, +\infty)$
+
+**EI26:** $h(x) = -\frac{1}{2}(x + 3)^2 + 2$
+*   **Forma:** Canónica
+*   **Vértice:** $(-3, 2)$ (se lee directamente)
+*   **Raíces:** Resolviendo $-\frac{1}{2}(x + 3)^2 + 2 = 0$:
+    *   $-\frac{1}{2}(x + 3)^2 = -2$
+    *   $(x + 3)^2 = 4$
+    *   $x + 3 = \pm 2$, entonces $x_1 = -5$, $x_2 = -1$
+*   **Concavidad:** $a = -\frac{1}{2} < 0$, abre hacia abajo
+*   **Intervalo de crecimiento:** $(-\infty, -3)$
+*   **Intervalo de decrecimiento:** $(-3, +\infty)$
+*   **Máximo:** $(-3, 2)$
+*   **Mínimo:** No tiene
+*   **Intervalo de positividad:** $(-5, -1)$
+*   **Intervalo de negatividad:** $(-\infty, -5) \cup (-1, +\infty)$
+
 ---
 
 ## Soluciones de Ejercicios Avanzados (EA01 - EA20)
