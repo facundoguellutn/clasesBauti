@@ -11,4 +11,14 @@ export const topics: Topic[] = [
     lessonsCount: 18,
     exercisesCount: 8,
   },
+  {
+    id: 'visual-studio-code',
+    slug: 'visual-studio-code',
+    title: 'Visual Studio Code',
+    description: 'Aprende a usar Visual Studio Code desde cero. Instalación, interfaz, extensiones, terminal y todo lo necesario para empezar a programar eficientemente.',
+    icon: '💻',
+    color: 'bg-green-500',
+    lessonsCount: 14,
+    exercisesCount: 6,
+  },
 ];

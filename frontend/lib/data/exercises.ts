@@ -1226,14 +1226,206 @@ export const quadraticExercises: Exercise[] = [
   },
 ];
 
+export const vscodeExercises: Exercise[] = [
+  {
+    id: 'vscode-ex-01',
+    topicId: 'visual-studio-code',
+    slug: 'instalar-vscode',
+    title: 'Instalar Visual Studio Code',
+    description: 'Instala VS Code en tu computadora siguiendo los pasos correctos.',
+    statement: 'Instala Visual Studio Code en tu computadora. Si ya lo tienes instalado, verifica que esté funcionando correctamente abriéndolo.',
+    difficulty: 'basic',
+    order: 1,
+    type: 'fill-blank',
+    hints: [
+      'Ve al sitio oficial: code.visualstudio.com',
+      'Descarga la versión para tu sistema operativo',
+      'Sigue el asistente de instalación',
+      'En Windows, marca "Add to PATH"',
+    ],
+    solution: {
+      answer: 'VS Code debe estar instalado y funcionando correctamente',
+      explanation: 'Para instalar VS Code: 1. Ve a code.visualstudio.com 2. Descarga la versión para tu sistema operativo 3. Ejecuta el instalador 4. En Windows, marca "Add to PATH" durante la instalación 5. Completa la instalación 6. Abre VS Code para verificar que funciona',
+      steps: [
+        'Abre tu navegador y ve a code.visualstudio.com',
+        'Haz clic en "Download for [tu sistema operativo]"',
+        'Ejecuta el archivo descargado',
+        'Sigue el asistente de instalación',
+        'En Windows, asegúrate de marcar "Add to PATH"',
+        'Completa la instalación',
+        'Abre VS Code para verificar que funciona correctamente',
+      ],
+    },
+  },
+  {
+    id: 'vscode-ex-02',
+    topicId: 'visual-studio-code',
+    slug: 'crear-primer-archivo',
+    title: 'Crear tu Primer Archivo',
+    description: 'Crea un archivo nuevo, escribe código y guárdalo.',
+    statement: 'Crea un archivo nuevo en VS Code llamado "hola.txt", escribe "¡Hola desde VS Code!" y guárdalo en tu escritorio.',
+    difficulty: 'basic',
+    order: 2,
+    type: 'fill-blank',
+    hints: [
+      'Usa Ctrl + N (Windows/Linux) o Cmd + N (Mac) para crear un archivo nuevo',
+      'Escribe el texto en el editor',
+      'Usa Ctrl + S (Windows/Linux) o Cmd + S (Mac) para guardar',
+      'Elige el escritorio como ubicación al guardar',
+    ],
+    solution: {
+      answer: 'Archivo hola.txt creado y guardado en el escritorio',
+      explanation: 'Para crear tu primer archivo: 1. Abre VS Code 2. Presiona Ctrl + N (o Cmd + N en Mac) para crear un archivo nuevo 3. Escribe "¡Hola desde VS Code!" 4. Presiona Ctrl + S (o Cmd + S en Mac) para guardar 5. Navega al escritorio y guarda como "hola.txt"',
+      steps: [
+        'Abre VS Code',
+        'Presiona Ctrl + N (Windows/Linux) o Cmd + N (Mac) para crear un archivo nuevo',
+        'Escribe: ¡Hola desde VS Code!',
+        'Presiona Ctrl + S (Windows/Linux) o Cmd + S (Mac) para guardar',
+        'En el cuadro de diálogo, navega a tu escritorio',
+        'Escribe "hola.txt" como nombre del archivo',
+        'Haz clic en "Save" (Guardar)',
+        'Verifica que el archivo se guardó correctamente',
+      ],
+    },
+  },
+  {
+    id: 'vscode-ex-03',
+    topicId: 'visual-studio-code',
+    slug: 'usar-terminal',
+    title: 'Usar el Terminal Integrado',
+    description: 'Abre el terminal integrado y ejecuta comandos básicos.',
+    statement: 'Abre el terminal integrado en VS Code, navega a tu carpeta de documentos y lista los archivos que hay allí.',
+    difficulty: 'basic',
+    order: 3,
+    type: 'fill-blank',
+    hints: [
+      'Abre el terminal con Ctrl + Ñ o Ctrl + `',
+      'Usa cd para cambiar de carpeta',
+      'Usa dir (Windows) o ls (Mac/Linux) para listar archivos',
+      'La ruta a documentos suele ser Documents o Documentos',
+    ],
+    solution: {
+      answer: 'Terminal abierto, navegado a documentos y archivos listados',
+      explanation: 'Para usar el terminal: 1. Abre VS Code 2. Presiona Ctrl + Ñ o Ctrl + ` para abrir el terminal 3. Escribe cd Documents (o cd Documentos en español) 4. Presiona Enter 5. Escribe dir (Windows) o ls (Mac/Linux) para listar archivos 6. Presiona Enter',
+      steps: [
+        'Abre VS Code',
+        'Presiona Ctrl + Ñ o Ctrl + ` (backtick) para abrir el terminal',
+        'Escribe: cd Documents (o cd Documentos si tu sistema está en español)',
+        'Presiona Enter para cambiar a esa carpeta',
+        'Escribe: dir (Windows) o ls (Mac/Linux)',
+        'Presiona Enter para listar los archivos',
+        'Observa la lista de archivos en la carpeta',
+      ],
+    },
+  },
+  {
+    id: 'vscode-ex-04',
+    topicId: 'visual-studio-code',
+    slug: 'ejecutar-codigo-python',
+    title: 'Ejecutar Código Python',
+    description: 'Crea un archivo Python y ejecútalo desde el terminal.',
+    statement: 'Crea un archivo llamado "saludo.py", escribe print("¡Hola, mundo!") y ejecútalo desde el terminal integrado de VS Code.',
+    difficulty: 'intermediate',
+    order: 4,
+    type: 'calculation',
+    hints: [
+      'Crea un archivo nuevo con extensión .py',
+      'Escribe el código Python en el archivo',
+      'Guarda el archivo',
+      'Abre el terminal y ejecuta: python saludo.py (o python3 en Mac/Linux)',
+    ],
+    solution: {
+      answer: 'Código Python ejecutado correctamente, muestra: ¡Hola, mundo!',
+      explanation: 'Para ejecutar código Python: 1. Crea un archivo nuevo (Ctrl + N) 2. Guárdalo como "saludo.py" 3. Escribe: print("¡Hola, mundo!") 4. Guarda el archivo (Ctrl + S) 5. Abre el terminal (Ctrl + Ñ) 6. Ejecuta: python saludo.py (o python3 en Mac/Linux) 7. Verás la salida: ¡Hola, mundo!',
+      steps: [
+        'Crea un archivo nuevo con Ctrl + N (o Cmd + N en Mac)',
+        'Guarda el archivo como "saludo.py" (Ctrl + S o Cmd + S)',
+        'Escribe en el archivo: print("¡Hola, mundo!")',
+        'Guarda el archivo nuevamente',
+        'Abre el terminal integrado con Ctrl + Ñ o Ctrl + `',
+        'Asegúrate de estar en la carpeta donde guardaste el archivo',
+        'Escribe: python saludo.py (o python3 saludo.py en Mac/Linux)',
+        'Presiona Enter',
+        'Deberías ver: ¡Hola, mundo!',
+      ],
+    },
+  },
+  {
+    id: 'vscode-ex-05',
+    topicId: 'visual-studio-code',
+    slug: 'instalar-extension',
+    title: 'Instalar una Extensión',
+    description: 'Instala una extensión útil en VS Code.',
+    statement: 'Instala la extensión "Python" de Microsoft en VS Code. Esta extensión es esencial para programar en Python.',
+    difficulty: 'intermediate',
+    order: 5,
+    type: 'fill-blank',
+    hints: [
+      'Abre el panel de extensiones con Ctrl + Shift + X',
+      'Busca "Python" en el cuadro de búsqueda',
+      'Encuentra la extensión oficial de Microsoft',
+      'Haz clic en "Install" (Instalar)',
+    ],
+    solution: {
+      answer: 'Extensión Python de Microsoft instalada correctamente',
+      explanation: 'Para instalar una extensión: 1. Haz clic en el icono de extensiones (📦) en la barra lateral izquierda, o presiona Ctrl + Shift + X 2. En el cuadro de búsqueda, escribe "Python" 3. Encuentra la extensión oficial de Microsoft (tiene el logo de Microsoft) 4. Haz clic en "Install" (Instalar) 5. Espera a que se instale 6. Puede que necesites reiniciar VS Code',
+      steps: [
+        'Haz clic en el icono de extensiones (📦) en la barra lateral izquierda',
+        'O presiona Ctrl + Shift + X (Windows/Linux) o Cmd + Shift + X (Mac)',
+        'En el cuadro de búsqueda, escribe "Python"',
+        'Encuentra la extensión oficial de Microsoft (debe tener muchas descargas)',
+        'Haz clic en "Install" (Instalar)',
+        'Espera a que se complete la instalación',
+        'Si se te pide, reinicia VS Code',
+        'Verifica que la extensión esté instalada en la pestaña "INSTALLED"',
+      ],
+    },
+  },
+  {
+    id: 'vscode-ex-06',
+    topicId: 'visual-studio-code',
+    slug: 'trabajar-con-carpetas',
+    title: 'Trabajar con Carpetas',
+    description: 'Abre una carpeta en VS Code y crea archivos dentro de ella.',
+    statement: 'Crea una carpeta llamada "mi-proyecto" en tu escritorio, ábrela en VS Code, y crea dentro un archivo llamado "index.html" con contenido HTML básico.',
+    difficulty: 'intermediate',
+    order: 6,
+    type: 'fill-blank',
+    hints: [
+      'Crea la carpeta "mi-proyecto" en tu escritorio',
+      'Abre VS Code y ve a File → Open Folder',
+      'Selecciona la carpeta "mi-proyecto"',
+      'Crea un archivo nuevo dentro de la carpeta',
+      'Escribe código HTML básico',
+    ],
+    solution: {
+      answer: 'Carpeta abierta en VS Code y archivo index.html creado con HTML básico',
+      explanation: 'Para trabajar con carpetas: 1. Crea una carpeta "mi-proyecto" en tu escritorio 2. Abre VS Code 3. Ve a File → Open Folder (o Ctrl + K luego Ctrl + O) 4. Selecciona la carpeta "mi-proyecto" 5. Haz clic derecho en el explorador y selecciona "New File" 6. Nombra el archivo "index.html" 7. Escribe código HTML básico como <!DOCTYPE html><html><head><title>Mi Proyecto</title></head><body><h1>Hola</h1></body></html>',
+      steps: [
+        'Crea una carpeta llamada "mi-proyecto" en tu escritorio',
+        'Abre VS Code',
+        'Ve a File → Open Folder... (o presiona Ctrl + K luego Ctrl + O)',
+        'Navega hasta tu escritorio y selecciona la carpeta "mi-proyecto"',
+        'Haz clic en "Select Folder" (Seleccionar carpeta)',
+        'Observa que la carpeta aparece en el explorador de VS Code',
+        'Haz clic derecho en el explorador y selecciona "New File"',
+        'Escribe "index.html" como nombre del archivo',
+        'Presiona Enter',
+        'Escribe código HTML básico en el archivo',
+        'Guarda el archivo con Ctrl + S (o Cmd + S en Mac)',
+      ],
+    },
+  },
+];
+
 export const getExerciseById = (id: string) => {
-  return quadraticExercises.find(ex => ex.id === id);
+  return quadraticExercises.find(ex => ex.id === id) || vscodeExercises.find(ex => ex.id === id);
 };
 
 export const getExerciseBySlug = (slug: string) => {
-  return quadraticExercises.find(ex => ex.slug === slug);
+  return quadraticExercises.find(ex => ex.slug === slug) || vscodeExercises.find(ex => ex.slug === slug);
 };
 
 export const getExercisesByDifficulty = (difficulty: 'basic' | 'intermediate' | 'advanced') => {
-  return quadraticExercises.filter(ex => ex.difficulty === difficulty);
+  return [...quadraticExercises, ...vscodeExercises].filter(ex => ex.difficulty === difficulty);
 };

@@ -76,7 +76,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* All Topics Section */}
+      <section id="temas" className="w-full px-4 py-16 bg-slate-50 dark:bg-slate-950">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold">Todos los Temas</h2>
+            <p className="text-slate-600 dark:text-slate-400">Explora nuestros cursos disponibles</p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {topics.map((topic) => (
+              <Link key={topic.id} href={`/temas/${topic.slug}`}>
+                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full border-2 hover:border-blue-300 dark:hover:border-blue-700">
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <div className="space-y-2 flex-1">
+                        <div className="text-4xl">{topic.icon}</div>
+                        <CardTitle className="text-2xl">{topic.title}</CardTitle>
+                        <CardDescription className="text-base">{topic.description}</CardDescription>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex gap-2 flex-wrap">
+                      <Badge className={topic.color}>{topic.lessonsCount} Lecciones</Badge>
+                      <Badge variant="outline">{topic.exercisesCount} Ejercicios</Badge>
+                    </div>
+                    <Button className="w-full" variant="outline">
+                      Explorar Tema →
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="w-full px-4 py-16">

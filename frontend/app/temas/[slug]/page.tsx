@@ -18,6 +18,10 @@ export default function TopicPage({ params }: TopicPageProps) {
   if (topic.slug === 'funciones-cuadraticas') {
     redirect('/temas/funciones-cuadraticas');
   }
+  
+  if (topic.slug === 'visual-studio-code') {
+    redirect('/temas/visual-studio-code');
+  }
 
   // For other topics, show coming soon (placeholder for future topics)
   return (
