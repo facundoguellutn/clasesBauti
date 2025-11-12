@@ -63,10 +63,10 @@ export interface QuadraticFunctionData {
   a: number;
   b: number;
   c: number;
-  vertex?: { x: number; y: number };
+  vertex: { x: number; y: number };
   roots?: number[];
-  axis?: number;
-  yIntercept?: number;
+  axis: number;
+  yIntercept: number;
 }
 
 export interface GraphPoint {

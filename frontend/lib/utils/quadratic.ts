@@ -121,7 +121,7 @@ export function formatQuadraticInfo(a: number, b: number, c: number): string {
   const analysis = analyzeQuadratic(a, b, c);
   let info = `f(x) = ${a}x² + ${b}x + ${c}\n`;
   info += `Vértice: (${analysis.vertex.x.toFixed(2)}, ${analysis.vertex.y.toFixed(2)})\n`;
-  info += `Eje de simetría: x = ${analysis.axis?.toFixed(2)}\n`;
+  info += `Eje de simetría: x = ${analysis.axis.toFixed(2)}\n`;
   info += `Intersección Y: (0, ${analysis.yIntercept})\n`;
 
   if (analysis.roots && analysis.roots.length > 0) {
