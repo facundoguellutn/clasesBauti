@@ -133,26 +133,28 @@ export function ContentRenderer({ content, className = '' }: ContentRendererProp
   const renderParts = () => {
     const elements: React.ReactNode[] = [];
     let currentParagraph: TextPart[] = [];
+    let elementKeyCounter = 0;
 
     const flushParagraph = () => {
       if (currentParagraph.length > 0) {
+        const paragraphKey = `paragraph-${elementKeyCounter++}`;
         elements.push(
           <p
-            key={elements.length}
+            key={paragraphKey}
             className="text-slate-700 dark:text-slate-300 whitespace-pre-line leading-relaxed"
           >
             {currentParagraph.map((part, idx) => {
               if (part.type === 'inline-code') {
                 return (
                   <code
-                    key={idx}
+                    key={`${paragraphKey}-inline-${idx}`}
                     className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono text-slate-900 dark:text-slate-100"
                   >
                     {part.content}
                   </code>
                 );
               }
-              return <span key={idx}>{part.content}</span>;
+              return <span key={`${paragraphKey}-text-${idx}`}>{part.content}</span>;
             })}
           </p>
         );
@@ -165,7 +167,7 @@ export function ContentRenderer({ content, className = '' }: ContentRendererProp
         flushParagraph();
         elements.push(
           <CodeBlock
-            key={index}
+            key={`code-${elementKeyCounter++}`}
             code={part.content}
             language={part.language}
             showLineNumbers={true}

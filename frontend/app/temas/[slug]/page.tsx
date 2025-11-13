@@ -27,6 +27,10 @@ export default function TopicPage({ params }: TopicPageProps) {
     redirect('/temas/systems-interactions');
   }
 
+  if (topic.slug === 'python') {
+    redirect('/temas/python');
+  }
+
   // For other topics, show coming soon (placeholder for future topics)
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 flex items-center justify-center">

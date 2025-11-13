@@ -51,4 +51,14 @@ export const topics: Topic[] = [
     lessonsCount: 15,
     exercisesCount: 10,
   },
+  {
+    id: 'python',
+    slug: 'python',
+    title: 'Python Básico',
+    description: 'Aprende Python desde cero. Instalación, playgrounds online para practicar sin instalación, sintaxis, variables, operadores, estructuras de control, listas, diccionarios, funciones, POO básica y más.',
+    icon: '🐍',
+    color: 'bg-yellow-500',
+    lessonsCount: 18,
+    exercisesCount: 12,
+  },
 ];
