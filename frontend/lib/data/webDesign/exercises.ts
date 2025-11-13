@@ -54,7 +54,7 @@ export const webDesignExercises: Exercise[] = [
     ],
     solution: {
       answer: 'Archivo HTML creado y visible en el navegador',
-      explanation: 'Crea un archivo "index.html" con este contenido: <!DOCTYPE html> <html lang="es"> <head> <meta charset="UTF-8"> <title>Mi Primera Página</title> </head> <body> <h1>Bienvenido a mi página</h1> <p>Esta es mi primera página web. Estoy aprendiendo HTML.</p> <a href="https://www.google.com">Visita Google</a> </body> </html> Guarda el archivo y ábrelo en tu navegador haciendo doble clic.',
+      explanation: 'Crea un archivo "index.html" con este contenido:\n```html\n<!DOCTYPE html>\n<html lang="es">\n<head>\n  <meta charset="UTF-8">\n  <title>Mi Primera Página</title>\n</head>\n<body>\n  <h1>Bienvenido a mi página</h1>\n  <p>Esta es mi primera página web. Estoy aprendiendo HTML.</p>\n  <a href="https://www.google.com">Visita Google</a>\n</body>\n</html>\n```\n\nGuarda el archivo y ábrelo en tu navegador haciendo doble clic.',
       steps: [
         'Abre tu editor de código (VS Code, Notepad++, etc.)',
         'Crea un archivo nuevo',
@@ -89,7 +89,7 @@ export const webDesignExercises: Exercise[] = [
     ],
     solution: {
       answer: 'Archivo CSS creado y conectado, estilos aplicados correctamente',
-      explanation: 'HTML: Agrega en el <head>: <link rel="stylesheet" href="styles.css">. CSS (styles.css): body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: #333; } h1 { color: #0066cc; font-size: 32px; } p { font-size: 16px; line-height: 1.5; }',
+      explanation: '**HTML:** Agrega en el `<head>`:\n```html\n<link rel="stylesheet" href="styles.css">\n```\n\n**CSS (styles.css):**\n```css\nbody {\n  font-family: Arial, sans-serif;\n  background-color: #f0f0f0;\n  color: #333;\n}\n\nh1 {\n  color: #0066cc;\n  font-size: 32px;\n}\n\np {\n  font-size: 16px;\n  line-height: 1.5;\n}\n```',
       steps: [
         'Crea un archivo nuevo llamado "styles.css"',
         'En tu HTML, agrega <link rel="stylesheet" href="styles.css"> en el <head>',
@@ -121,7 +121,7 @@ export const webDesignExercises: Exercise[] = [
     ],
     solution: {
       answer: 'Variables creadas y valores mostrados en la consola',
-      explanation: 'Código JavaScript: <script> const nombre = "Juan"; const edad = 25; const esEstudiante = true; console.log("Nombre:", nombre); console.log("Edad:", edad); console.log("Es estudiante:", esEstudiante); </script> Abre la consola del navegador (F12) para ver los valores.',
+      explanation: 'Código JavaScript:\n```javascript\n<script>\nconst nombre = "Juan";\nconst edad = 25;\nconst esEstudiante = true;\n\nconsole.log("Nombre:", nombre);\nconsole.log("Edad:", edad);\nconsole.log("Es estudiante:", esEstudiante);\n</script>\n```\n\nAbre la consola del navegador (F12) para ver los valores.',
       steps: [
         'Crea un archivo HTML con estructura básica',
         'Antes del cierre de </body>, agrega <script>',
@@ -157,7 +157,7 @@ export const webDesignExercises: Exercise[] = [
     ],
     solution: {
       answer: 'Programa con condiciones funcionando correctamente',
-      explanation: 'Código: <script> const edad = 20; if (edad >= 18) { console.log("Eres mayor de edad"); } else { console.log("Eres menor de edad"); } </script> Prueba cambiando el valor de edad para ver ambos casos.',
+      explanation: 'Código:\n```javascript\n<script>\nconst edad = 20;\nif (edad >= 18) {\n  console.log("Eres mayor de edad");\n} else {\n  console.log("Eres menor de edad");\n}\n</script>\n```\n\nPrueba cambiando el valor de edad para ver ambos casos.',
       steps: [
         'Crea un archivo HTML con <script>',
         'Declara: const edad = 20;',
@@ -191,7 +191,7 @@ export const webDesignExercises: Exercise[] = [
     ],
     solution: {
       answer: 'Ciclo for funcionando, números impresos y suma calculada',
-      explanation: 'Código: <script> // Imprimir números for (let i = 1; i <= 10; i++) { console.log(i); } // Calcular suma let suma = 0; for (let i = 1; i <= 10; i++) { suma += i; } console.log("Suma:", suma); // 55 </script>',
+      explanation: 'Código:\n```javascript\n<script>\n// Imprimir números\nfor (let i = 1; i <= 10; i++) {\n  console.log(i);\n}\n\n// Calcular suma\nlet suma = 0;\nfor (let i = 1; i <= 10; i++) {\n  suma += i;\n}\nconsole.log("Suma:", suma); // 55\n</script>\n```',
       steps: [
         'Crea un archivo HTML con <script>',
         'Escribe: for (let i = 1; i <= 10; i++) {',
@@ -226,7 +226,7 @@ export const webDesignExercises: Exercise[] = [
     ],
     solution: {
       answer: 'Tres funciones creadas y funcionando correctamente',
-      explanation: 'Código: <script> function saludar(nombre) { console.log("Hola, " + nombre); } function sumar(a, b) { return a + b; } function esPar(numero) { return numero % 2 === 0; } // Probar las funciones saludar("Juan"); const resultado = sumar(5, 3); console.log("Suma:", resultado); console.log("¿4 es par?", esPar(4)); console.log("¿5 es par?", esPar(5)); </script>',
+      explanation: 'Código:\n```javascript\n<script>\nfunction saludar(nombre) {\n  console.log("Hola, " + nombre);\n}\n\nfunction sumar(a, b) {\n  return a + b;\n}\n\nfunction esPar(numero) {\n  return numero % 2 === 0;\n}\n\n// Probar las funciones\nsaludar("Juan");\nconst resultado = sumar(5, 3);\nconsole.log("Suma:", resultado);\nconsole.log("¿4 es par?", esPar(4));\nconsole.log("¿5 es par?", esPar(5));\n</script>\n```',
       steps: [
         'Crea un archivo HTML con <script>',
         'Escribe: function saludar(nombre) { console.log("Hola, " + nombre); }',
@@ -261,7 +261,7 @@ export const webDesignExercises: Exercise[] = [
     ],
     solution: {
       answer: 'Array creado, recorrido, modificado y longitud mostrada',
-      explanation: 'Código: <script> const frutas = ["manzana", "banana", "naranja", "pera", "uva"]; // Recorrer array for (let i = 0; i < frutas.length; i++) { console.log(frutas[i]); } // Agregar fruta frutas.push("mango"); console.log("Array completo:", frutas); console.log("Longitud:", frutas.length); // 6 </script>',
+      explanation: 'Código:\n```javascript\n<script>\nconst frutas = ["manzana", "banana", "naranja", "pera", "uva"];\n\n// Recorrer array\nfor (let i = 0; i < frutas.length; i++) {\n  console.log(frutas[i]);\n}\n\n// Agregar fruta\nfrutas.push("mango");\nconsole.log("Array completo:", frutas);\nconsole.log("Longitud:", frutas.length); // 6\n</script>\n```',
       steps: [
         'Crea un archivo HTML con <script>',
         'Declara: const frutas = ["manzana", "banana", "naranja", "pera", "uva"];',
@@ -295,7 +295,7 @@ export const webDesignExercises: Exercise[] = [
     ],
     solution: {
       answer: 'Objeto creado, propiedades mostradas, modificado y método funcionando',
-      explanation: 'Código: <script> const persona = { nombre: "Juan", edad: 25, ciudad: "Madrid", email: "juan@ejemplo.com" }; // Mostrar propiedades console.log("Nombre:", persona.nombre); console.log("Edad:", persona.edad); console.log("Ciudad:", persona.ciudad); console.log("Email:", persona.email); // Modificar y agregar persona.profesion = "Desarrollador"; persona.edad = 26; // Agregar método persona.presentarse = function() { console.log("Soy " + this.nombre + " de " + this.ciudad); }; persona.presentarse(); </script>',
+      explanation: 'Código:\n```javascript\n<script>\nconst persona = {\n  nombre: "Juan",\n  edad: 25,\n  ciudad: "Madrid",\n  email: "juan@ejemplo.com"\n};\n\n// Mostrar propiedades\nconsole.log("Nombre:", persona.nombre);\nconsole.log("Edad:", persona.edad);\nconsole.log("Ciudad:", persona.ciudad);\nconsole.log("Email:", persona.email);\n\n// Modificar y agregar\npersona.profesion = "Desarrollador";\npersona.edad = 26;\n\n// Agregar método\npersona.presentarse = function() {\n  console.log("Soy " + this.nombre + " de " + this.ciudad);\n};\n\npersona.presentarse();\n</script>\n```',
       steps: [
         'Crea un archivo HTML con <script>',
         'Declara: const persona = { nombre: "Juan", edad: 25, ciudad: "Madrid", email: "juan@ejemplo.com" };',
@@ -330,7 +330,7 @@ export const webDesignExercises: Exercise[] = [
     ],
     solution: {
       answer: 'Página web interactiva completa con HTML, CSS y JavaScript funcionando',
-      explanation: 'HTML (index.html): <!DOCTYPE html> <html> <head> <link rel="stylesheet" href="styles.css"> </head> <body> <h1>Contador Interactivo</h1> <p>Valor: <span id="valor">0</span></p> <button id="incrementar">Incrementar</button> <script src="script.js"></script> </body> </html> CSS (styles.css): body { font-family: Arial; text-align: center; padding: 50px; } button { padding: 10px 20px; font-size: 18px; background-color: #0066cc; color: white; border: none; cursor: pointer; } button:hover { background-color: #0052a3; } JavaScript (script.js): let contador = 0; const boton = document.getElementById("incrementar"); const valor = document.getElementById("valor"); boton.addEventListener("click", function() { contador++; valor.textContent = contador; });',
+      explanation: '**HTML (index.html):**\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <link rel="stylesheet" href="styles.css">\n</head>\n<body>\n  <h1>Contador Interactivo</h1>\n  <p>Valor: <span id="valor">0</span></p>\n  <button id="incrementar">Incrementar</button>\n  <script src="script.js"></script>\n</body>\n</html>\n```\n\n**CSS (styles.css):**\n```css\nbody {\n  font-family: Arial;\n  text-align: center;\n  padding: 50px;\n}\n\nbutton {\n  padding: 10px 20px;\n  font-size: 18px;\n  background-color: #0066cc;\n  color: white;\n  border: none;\n  cursor: pointer;\n}\n\nbutton:hover {\n  background-color: #0052a3;\n}\n```\n\n**JavaScript (script.js):**\n```javascript\nlet contador = 0;\nconst boton = document.getElementById("incrementar");\nconst valor = document.getElementById("valor");\n\nboton.addEventListener("click", function() {\n  contador++;\n  valor.textContent = contador;\n});\n```',
       steps: [
         'Crea index.html con estructura básica',
         'Agrega <h1>Contador Interactivo</h1>',

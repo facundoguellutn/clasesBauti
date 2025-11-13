@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import {  getVSCodeLessonBySlug } from '@/lib/data/lessons';
 import { vscodeLessons } from '@/lib/data/visualStudio/lessons';
+import { ContentRenderer } from '@/components/ContentRenderer';
 
 export default function VSCodeLessonPage() {
   const params = useParams();
@@ -58,7 +59,7 @@ export default function VSCodeLessonPage() {
               <CardTitle>Contenido</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-slate-700 dark:text-slate-300 whitespace-pre-line">{lesson.content}</p>
+              <ContentRenderer content={lesson.content} />
             </CardContent>
           </Card>
 
@@ -72,9 +73,7 @@ export default function VSCodeLessonPage() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="prose dark:prose-invert max-w-none">
-                  <p className="text-slate-700 dark:text-slate-300 whitespace-pre-line">{section.content}</p>
-                </div>
+                <ContentRenderer content={section.content} />
               </CardContent>
             </Card>
           ))}

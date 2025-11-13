@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Exercise } from '@/lib/types';
 import { QuadraticGraph } from './QuadraticGraph';
+import { ContentRenderer } from './ContentRenderer';
 
 interface ExerciseSolverProps {
   exercise: Exercise;
@@ -56,9 +57,9 @@ export function ExerciseSolver({ exercise }: ExerciseSolverProps) {
         </CardHeader>
         <CardContent>
           <div className="bg-blue-50 dark:bg-blue-950 p-6 rounded-lg border border-blue-200 dark:border-blue-900">
-            <p className="text-slate-900 dark:text-slate-50 text-lg whitespace-pre-wrap font-semibold">
-              {exercise.statement}
-            </p>
+            <div className="text-slate-900 dark:text-slate-50 text-lg font-semibold">
+              <ContentRenderer content={exercise.statement} />
+            </div>
           </div>
         </CardContent>
       </Card>
@@ -104,7 +105,8 @@ export function ExerciseSolver({ exercise }: ExerciseSolverProps) {
             {showHints && (
               <Alert className="bg-yellow-50 dark:bg-yellow-950 border-yellow-200 dark:border-yellow-900">
                 <AlertDescription className="text-yellow-800 dark:text-yellow-200">
-                  <strong>Pista {currentHintIndex + 1}:</strong> {exercise.hints[currentHintIndex]}
+                  <strong>Pista {currentHintIndex + 1}:</strong>{' '}
+                  <ContentRenderer content={exercise.hints[currentHintIndex]} />
                 </AlertDescription>
               </Alert>
             )}
@@ -126,9 +128,9 @@ export function ExerciseSolver({ exercise }: ExerciseSolverProps) {
                   {exercise.solution.answer}
                 </p>
               </div>
-              <p className="text-green-800 dark:text-green-200">
-                {exercise.solution.explanation}
-              </p>
+              <div className="text-green-800 dark:text-green-200">
+                <ContentRenderer content={exercise.solution.explanation} />
+              </div>
             </CardContent>
           </Card>
 
@@ -145,7 +147,7 @@ export function ExerciseSolver({ exercise }: ExerciseSolverProps) {
                       {index + 1}
                     </div>
                     <div className="flex-1">
-                      <p className="text-slate-700 dark:text-slate-300">{step}</p>
+                      <ContentRenderer content={step} />
                     </div>
                   </div>
                 ))}
