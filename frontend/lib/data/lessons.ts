@@ -3,6 +3,7 @@ import { quadraticLessons } from './quadratic/lessons';
 import { vscodeLessons } from './visualStudio/lessons';
 import { webDesignLessons } from './webDesign/lessons';
 import { consoleLessons } from './console/lessons';
+import { systemsInteractionsLessons } from './systemsInteractions/lessons';
 
 
 
@@ -36,4 +37,12 @@ export const getConsoleLessonById = (id: string) => {
 
 export const getConsoleLessonBySlug = (slug: string) => {
   return consoleLessons.find(lesson => lesson.slug === slug);
+};
+
+export const getSystemsInteractionsLessonById = (id: string) => {
+  return systemsInteractionsLessons.find(lesson => lesson.id === id);
+};
+
+export const getSystemsInteractionsLessonBySlug = (slug: string) => {
+  return systemsInteractionsLessons.find(lesson => lesson.slug === slug);
 };

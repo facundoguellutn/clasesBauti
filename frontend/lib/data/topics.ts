@@ -41,4 +41,14 @@ export const topics: Topic[] = [
     lessonsCount: 12,
     exercisesCount: 8,
   },
+  {
+    id: 'systems-interactions',
+    slug: 'systems-interactions',
+    title: 'Sistemas e Interacciones',
+    description: 'Aprende cómo funcionan los sistemas informáticos: frontend, backend, bases de datos, lenguajes de programación, frameworks, HTTP, aplicaciones móviles, robótica, cloud computing y más.',
+    icon: '⚙️',
+    color: 'bg-indigo-500',
+    lessonsCount: 15,
+    exercisesCount: 10,
+  },
 ];
