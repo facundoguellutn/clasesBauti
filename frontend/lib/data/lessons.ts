@@ -2,6 +2,7 @@ import { Lesson } from '@/lib/types';
 import { quadraticLessons } from './quadratic/lessons';
 import { vscodeLessons } from './visualStudio/lessons';
 import { webDesignLessons } from './webDesign/lessons';
+import { consoleLessons } from './console/lessons';
 
 
 
@@ -27,4 +28,12 @@ export const getWebDesignLessonById = (id: string) => {
 
 export const getWebDesignLessonBySlug = (slug: string) => {
   return webDesignLessons.find(lesson => lesson.slug === slug);
+};
+
+export const getConsoleLessonById = (id: string) => {
+  return consoleLessons.find(lesson => lesson.id === id);
+};
+
+export const getConsoleLessonBySlug = (slug: string) => {
+  return consoleLessons.find(lesson => lesson.slug === slug);
 };

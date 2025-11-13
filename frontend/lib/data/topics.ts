@@ -31,4 +31,14 @@ export const topics: Topic[] = [
     lessonsCount: 16,
     exercisesCount: 10,
   },
+  {
+    id: 'console',
+    slug: 'console',
+    title: 'Terminal y Línea de Comandos',
+    description: 'Domina la terminal desde cero. Aprende comandos básicos, navegación, manipulación de archivos, redirección, pipes, scripts y más. Compatible con Windows, Linux y Mac.',
+    icon: '⌨️',
+    color: 'bg-orange-500',
+    lessonsCount: 12,
+    exercisesCount: 8,
+  },
 ];
